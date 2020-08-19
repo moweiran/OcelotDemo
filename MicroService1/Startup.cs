@@ -28,8 +28,11 @@ namespace MicroService1
             }
 
             app.UseRouting();
-
+            var authenticationProviderKey = "TestKey";
             app.UseAuthorization();
+                 //.AddJwtBearer(authenticationProviderKey, x =>
+                 //{
+                 //});
 
             app.UseEndpoints(endpoints =>
             {
