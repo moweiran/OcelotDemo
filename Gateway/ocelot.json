@@ -1,0 +1,80 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamHttpMethod": "",
+      "DownstreamHttpVersion": "",
+      "AddHeadersToRequest": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "RequestIdKey": "",
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": ""
+      },
+      "RouteIsCaseSensitive": false,
+      "ServiceName": "",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55692"
+        }
+      ],
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 0,
+        "DurationOfBreak": 0,
+        "TimeoutValue": 0
+      },
+      "LoadBalancer": "",
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": "",
+        "PeriodTimespan": 0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "",
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true,
+        "UseCookieContainer": true,
+        "UseTracing": true,
+        "MaxConnectionsPerServer": 100
+      },
+      "DangerousAcceptAnyServerCertificateValidator": false,
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/microserver1"
+    },
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55701"
+        }
+      ],
+      "UpstreamPathTemplate": "/microserver2",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/weatherforecast",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "56096"
+        }
+      ],
+      "UpstreamPathTemplate": "/microserver3",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:55658"
+  }
+}
