@@ -79,7 +79,11 @@
         }
       ],
       "UpstreamPathTemplate": "/microserver3",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "usergateway",
+        "AllowScopes": [ "UserServicesApi" ]
+      }
     }
   ],
   "GlobalConfiguration": {
